@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search flight</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .hero {
+      background: url('/images/aboutimg.jpg') center center / cover no-repeat;
+      min-height: 100vh;
+      color: white;
+      /* background-color: rgba(0, 0, 0, 0.6); */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .oops {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .top-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 10px;
+    }
+
+    .city-block {
+      font-size: 18px;
+    }
+
+    .city-block h2 {
+      font-size: 36px;
+      margin-top: 5px;
+    }
+
+    .swap-icon {
+      font-size: 32px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 20px 0 10px;
+      font-weight: 700;
+    }
+
+    .offer {
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    .phone-number {
+      font-size: 26px;
+      font-weight: 700;
+      color: #f4a340;
+    }
+
+    .form-container {
+      margin: 40px auto 0;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .form-group {
+      flex: 1 1 200px;
+      position: relative;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+      color: #ccc;
+    }
+
+    .form-group input {
+      padding: 10px 35px 10px 40px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 10px;
+      top: 35px;
+      color: #555;
+    }
+
+    .trip-type {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .trip-type label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+
+    .search-btn {
+      padding: 12px 30px;
+      background-color: #d75a00;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .search-btn:hover {
+      background-color: #bd4f00;
+    }
+
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .phone-number {
+        font-size: 20px;
+      }
+
+      .form-container {
+        flex-direction: column;
+      }
+    }
+
+    /* ======================================= */
+
+    .no-results-container {
+      text-align: center;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .search-icon {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      text-align: center;
+
+    }
+
+    p strong {
+      font-weight: 700;
+    }
+
+    .call-label {
+      margin-top: 25px;
+      font-weight: 500;
+    }
+
+    .phone-number {
+      font-size: 28px;
+      color: #ef8a07;
+      font-weight: 700;
+      text-align: center;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" />
+    </div>
+    <nav class="nav">
+      <a href="/"><i class="fas fa-home"></i> Hogar</a>
+      <a href="about.html"><i class="fas fa-suitcase"></i> Sobre nosotras</a>
+      <a href="privacy.html"><i class="fas fa-shield-alt"></i> política de Privacidad</a>
+      <a href="contact.html"><i class="fas fa-address-book"></i> Contacta con nosotras</a>
+    </nav>
+    <div class="contact-number">
+      <a href="tel:+528004610444" style="color: #ef5a07;">+52(800) 461-0444</a>
+    </div>
+    <div class="hamburger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="/"><i class="fas fa-home"></i> Hogar</a>
+    <a href="about.html"><i class="fas fa-suitcase"></i> Sobre nosotras</a>
+    <a href="privacy.html"><i class="fas fa-shield-alt"></i> política de Privacidad</a>
+    <a href="contact.html"><i class="fas fa-address-book"></i> Contacta con nosotras</a>
+  </nav>
+
+  <div class="hero">
+    <div class="top-section">
+      <div class="city-block">
+        <div id="fromCity"></div>
+        <h2 id="fromCode"></h2>
+      </div>
+      <div class="swap-icon">
+        <i class="fas fa-right-left"></i>
+      </div>
+      <div class="city-block">
+        <div id="toCity"></div>
+        <h2 id="toCode"></h2>
+      </div>
+    </div>
+
+    <h1>Your One-Stop Travel Solution</h1>
+    <div class="offer">Limited time offer</div>
+    <div class="call-info">Call now for exclusive rates</div>
+    <div class="phone-number">
+      <a href="tel:+528004610444" style="color: #ef5a07;">+52(800) 461-0444</a>
+    </div>
+
+  </div>
+
+
+  <div class="oops">
+    <div class="no-results-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="search" class="search-icon" />
+      <h1>No se encontraron resultados</h1>
+      <p>
+        Hemos buscado en más de <strong>400 aerolíneas</strong> que vendemos,<br />
+        y no pudimos encontrar ningún vuelo desde
+        <!-- <strong id="fromCity"></strong> a <strong id="toCity">ADD ~ Addis Ababa</strong> -->
+      </p>
+      <p class="call-label">Llámanos (24x7)</p>
+      <a href="tel:+528004610444" style="color: #ef5a07;">
+        <p class="phone-number">
+          +52(800) 461-0444
+        </p>
+      </a>
+      <div>
+        <a href="index.html" style="color: #ef5a07;">
+          <button class="search-btn"> <i class="fas fa-arrow-left" style="margin: 5px;"></i>Buscar Vuelos</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <a href="tel:+528004610444" style="color: #ef5a07;">
+    <div class="contact-call">
+      <h3>Phone call</h3>
+      <p style="color: white;">+52(800) 461-0444</p>
+    </div>
+  </a>
+</body>
+<script>
+  // search-result.html
+  window.addEventListener("DOMContentLoaded", () => {
+    const data = JSON.parse(localStorage.getItem("flightSearchData"));
+    if (data) {
+      const fromCode = data.fromAirport.slice(0, 3).toUpperCase();
+      const toCode = data.toAirport.slice(0, 3).toUpperCase();
+      // Example: Use it in the DOM
+      document.getElementById("fromCity").textContent = data.fromAirport;
+      document.getElementById("toCity").textContent = data.toAirport;
+      document.getElementById("fromCode").textContent = fromCode;
+      document.getElementById("toCode").textContent = toCode;
+      // ...etc.
+    }
+  });
+
+</script>
+
+</html>
